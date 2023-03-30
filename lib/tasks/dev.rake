@@ -50,9 +50,8 @@ task sample_data: :environment do
           caption: Faker::Quote.jack_handey,
           image: "https://robohash.org/#{rand(9999)}"
         )
-        p "hi"
-      
-        users.follower.each do |follower|
+    
+        user.followers.each do |follower|
           if rand <0.5 
             photo.fans << follower 
           end 

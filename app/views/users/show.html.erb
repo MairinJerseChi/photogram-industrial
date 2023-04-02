@@ -1,8 +1,21 @@
+<div class="row" >
+  <div class="col-md-6 offset-md-3" >
+    <nav class="nav nav-pills nav-justified">
+      <li class="nav-item">
+        <%= link_to "Posts", user_path(@user.username), class: "nav-link" %> 
+      </li>
+        <a class="nav-item nav-link" href="#">Feed</a>
+        <a class="nav-item nav-link" href="#">Followers</a>
+        <a class="nav-item nav-link" href="#">Following </a>
+        <a class="nav-item nav-link disabled" href="#">Followers</a>
+    </nav>
+  </div>
+</div>
 <h1>
 <%= @user.username %>
 </h1>
 
-<h2> Own Photos </h2>
+
 
   <% current_user.own_photos.each do |photo| %>
   <div class = "row mb-4">

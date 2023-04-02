@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root "photos#index"
+
+   #generate resources for only the user show page! 
+  resources :users, only: :show 
   resources :likes
   resources :follow_requests
   resources :comments

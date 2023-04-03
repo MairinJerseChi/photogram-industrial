@@ -24,34 +24,6 @@
 </h1>
 
 <%= current_user.own_photos.count %>
-
-  <% current_user.own_photos.each do |photo| %>
-  <div class = "row mb-4">
-    <div class ="col-md-6 offset-md-3">
-     <div class="card">
-        <%= image_tag photo.image, class: "card-img-top" %>
-     <div class="card-body">
-    <h5 class="card-title"><%=photo.owner.username%></h5>
-    <p class="card-text"><%= photo.caption %></p>
-    </div>
-
-     <ul class="list-group list-group-flush">
-        <% photo.comments.each do  |comment| %>
-        <div class="media">
-          <img class="mr-3" src="..." alt="Generic placeholder image">
-           <div class="media-body">
-          <h5 class="mt-0"><%= comment.author.username %></h5>
-             <p> <%= comment.body %></p>
-          </div>
-      </div>
-        <% end %>
-     </ul>
-     
-     <div class="card-body">
-       <%= render "comments/form", comment: photo.comments.build %> 
-    </div>
-</div>
-</div>
-</div>
+<% current_user.own_photos.each do |photo| %>
+  <%= render "photos/photo", photo: photo %>
 <%end%>
-</div>

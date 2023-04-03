@@ -9,6 +9,12 @@ User.delete_all
   usernames = Array.new {Faker::Name.first_name}
   usernames << "alice"
   usernames << "bob"
+  usernames << "mairin"
+  usernames << "tom"
+  usernames << "dino"
+  usernames << "pat"
+  usernames << "liz"
+  usernames << "ed"
 
   usernames.each do |username|
       name = Faker::Name.first_name.downcase

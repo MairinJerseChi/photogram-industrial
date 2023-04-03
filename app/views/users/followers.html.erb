@@ -21,12 +21,14 @@
 </div>
 <h1>
 <%= @user.username %>
-
-<%= link_to "View Followers", user_followers_path(username: @user.username) %>
-
 </h1>
 
-<%= current_user.own_photos.count %>
-<% current_user.own_photos.each do |photo| %>
-  <%= render "photos/photo", photo: photo %>
-<%end%>
+
+<div>
+<ul class="list-group">
+  <li class="list-group-item mb-4" aria-current="true"><%= current_user.username %></li>
+  <% current_user.followers.map do |follower| %>
+    <li class="list-group-item"><%= follower.username %></li>
+  <% end %>
+</ul>
+</div>

@@ -9,5 +9,8 @@ Rails.application.routes.draw do
 
   get ":username/liked" => "photos#liked", as: :liked_photos 
   get "/:username" => "users#show", as: :user 
+  get ":username/followers" => "users#followers", as: :user_followers 
+  get "/:username/following" => "users#following", as: :user_following
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+
